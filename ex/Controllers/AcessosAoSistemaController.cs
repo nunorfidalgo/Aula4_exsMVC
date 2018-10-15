@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ex.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,12 @@ namespace ex.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult Detalhe(string name = "Utilizador", int num = 1)
+        {
+            AcessosAoSistema m = new AcessosAoSistema(name, num);
+            return View(m);
         }
     }
 }
